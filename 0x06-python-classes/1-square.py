@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
-"""Define a class Square"""
+"""
+This module defines a Square class
+"""
 
 
 class Square:
-    """Square Class"""
+
+    """Square class
+        Attributes:
+        attr1(size): size of the square
+    """
     def __init__(self, size):
-        """ Private instance attribute """
         self.__size = size
-
-
-if __name__ == "__main__":
-    Square()
