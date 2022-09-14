@@ -1,18 +1,33 @@
 #!/usr/bin/python3
 
+"""
+This module defines a Square class
+"""
 
-def list_division(my_list_1, my_list_2, list_length):
-    results = []
-    for i in range(0, list_length):
-        result = 0
-        try:
-            result = my_list_1[i] / my_list_2[i]
-        except TypeError:
-            print("wrong type")
-        except ZeroDivisionError:
-            print("division by 0")
-        except IndexError:
-            print("out of range")
-        finally:
-            results.append(result)
-    return results
+
+class Square:
+
+    """Square class
+        Attributes:
+        attr1(size): size of the square
+    """
+    def __init__(self, size=0):
+        self.__size = size
+
+    @property
+    def size(self):
+        """gets the size of the square"""
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """sets the size of the square"""
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    def area(self):
+        """area: returns the area of the square"""
+        return self.__size ** 2
